@@ -4,7 +4,12 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.all
+    binding.pry
+    @blogs = Blog.special_blogs
+    binding.pry
+    @blogs = Blog.feature_blogs
+    binding.pry
+    @page_title = "My Portfolio Blog"
   end
 
   # GET /blogs/1
@@ -62,7 +67,7 @@ class BlogsController < ApplicationController
   end
 
   def toggle_status
-    
+
     if @blog.draft?
       @blog.published!
     elsif @blog.published?
