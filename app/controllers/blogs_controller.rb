@@ -4,17 +4,14 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    binding.pry
-    @blogs = Blog.special_blogs
-    binding.pry
-    @blogs = Blog.feature_blogs
-    binding.pry
-    @page_title = "My Portfolio Blog"
+    @blogs = Blog.all
+    @page_title = "Sara Kh"
   end
 
   # GET /blogs/1
   # GET /blogs/1.json
   def show
+    @page_title = @blog.title
   end
 
   # GET /blogs/new
