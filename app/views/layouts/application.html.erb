@@ -12,14 +12,19 @@
   </head>
 
   <body>
-    <%= render "shared/nav", location: 'bottom' %>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner">
+        <div class="cover-container">
 
-    <%= login_helper %>
+              <%= render "shared/application_nav"%>
+              <p class="notice"><%= notice %></p>
+              <p class="alert"><%= alert %></p>
+              <%= login_helper %>
+              <%= yield %>
+              <%= source_helper %>
+       </div>
+     </div>
+    </div>
 
-    <%= yield %>
-
-    <%= source_helper %>
   </body>
 </html>
